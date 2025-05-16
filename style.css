@@ -1,0 +1,198 @@
+:root{
+    --base-color: #dcdcdc;
+    --base-color2: #e9e9e9;
+    --base-color3: #f7f7f7;
+    --base-color4: #5553;
+    --base-color5: transparent;
+    --base-color6: #000;
+    --base-color7: #f78a55;
+    --base-color8: #fff;
+    --base-color9: #0003;
+    --base-color10: #b56291;
+    --base-color11: #48567b;
+    --base-color12: black;
+}
+.darkmode{
+    --base-color: rgb(27, 25, 25);
+    --base-color2: rgb(0, 0, 0);
+    --base-color3: black;
+    --base-color4: rgb(60, 56, 56);
+    --base-color5: transparent;
+    --base-color6: white;
+    --base-color7: #f78a55;
+    --base-color8: black;
+    --base-color9: #0003;
+    --base-color10: #b56291;
+    --base-color11: #48567b;
+    --base-color12: white;
+}
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: 
+    linear-gradient(
+        to bottom,
+        var(--base-color) 50%,
+        var(--base-color2) 50%
+    );
+    font-family: sans-serif;
+    position: relative;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    width: 400px;
+    height: max-content;
+    min-height: 300px;
+    background-color: var(--base-color3);
+    border-radius: 30px;
+    filter: drop-shadow(0 30px 50px var(--base-color4));
+    padding: 30px;
+    box-sizing: border-box;
+}
+main p{
+    color: var(--base-color12);
+}
+main form{
+    border: 1px solid var(--base-color4);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 30px;
+}
+main form input,
+main form button{
+    border: none;
+    background-color: var(--base-color5);
+    outline: none;
+    padding: 10px;
+}
+main form i{
+    opacity: 0.7;
+}
+main .result{
+    padding-top: 20px;
+    text-align: center;
+}
+main .result .name{
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: large;
+}
+main .temprature img{
+    width: 150px;
+    filter: drop-shadow(0 10px 50px var(--base-color6));
+}
+main .temprature figcaption{
+    color: var(--base-color12);
+    font-size: 3em;
+}
+main .description{
+    padding: 10px 0 30px;
+}
+main ul{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    padding-left:10px ;
+}
+main li{
+    background-color: var(--base-color7);
+    color: var(--base-color8);
+    border-radius: 10px;
+    padding: 20px 10px;
+    background-image: linear-gradient(
+        to bottom,
+        var(--base-color5) 50%,
+        var(--base-color9) 50%
+    );
+    font-weight: bold;
+    font-size: small;
+}
+main li i{
+    font-size: 2em;
+    display: block!important;
+    margin: 20px 0;
+}
+main li:nth-child(2){
+    background-color: var(--base-color10);
+}
+main li:nth-child(3){
+    background-color: var(--base-color11);
+}
+main.error{
+    animation: errorEffect 0.3s linear 1;
+}
+@keyframes errorEffect{
+    0%{
+        transform: translate(10px, 5px);
+    }
+    25%{
+        transform: translate(-5px , 0);
+    }
+    50%{
+        transform: translate(8px, 2px);
+    }
+    75%{
+        transform: translate(-2px, 5px);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+div{
+    color: var(--base-color12);
+    font-weight: bold;
+    padding-top: 10px;
+}
+.fa-solid.fa-magnifying-glass {
+    font-size: 1rem;
+    color: var(--base-color12);  /* Change to your desired color */
+}
+figcaption{
+    color: var(--base-color12);
+}
+
+input{
+    color: var(--base-color6);
+}
+#toggle-button{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--base-color6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+    z-index: 100;
+    position: fixed;
+    margin-left: 750px;
+}
+#toggle-button:hover{
+    transform: scale(1.2);
+    box-shadow: 0 0 20px blue;
+}
+#toggle-button i{
+    color: var(--base-color);
+    font-size: 1.3rem;
+}
+#toggle-button i:last-child{
+    display: none;
+}
+.darkmode #toggle-button i:first-child{
+    display: none;
+}
+.darkmode #toggle-button i:last-child{
+    display: block;
+}
